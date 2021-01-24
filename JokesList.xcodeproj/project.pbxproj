@@ -8,22 +8,36 @@
 
 /* Begin PBXBuildFile section */
 		AC13440925BD8D1D0005AFBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC13440825BD8D1D0005AFBC /* AppDelegate.swift */; };
-		AC13440B25BD8D1D0005AFBC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC13440A25BD8D1D0005AFBC /* SceneDelegate.swift */; };
-		AC13440D25BD8D1D0005AFBC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC13440C25BD8D1D0005AFBC /* ViewController.swift */; };
+		AC13440D25BD8D1D0005AFBC /* JokesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC13440C25BD8D1D0005AFBC /* JokesViewController.swift */; };
 		AC13441025BD8D1D0005AFBC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC13440E25BD8D1D0005AFBC /* Main.storyboard */; };
 		AC13441225BD8D280005AFBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC13441125BD8D280005AFBC /* Assets.xcassets */; };
 		AC13441525BD8D280005AFBC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC13441325BD8D280005AFBC /* LaunchScreen.storyboard */; };
+		AC13441D25BD8ECF0005AFBC /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC13441C25BD8ECF0005AFBC /* TabBarController.swift */; };
+		AC13441F25BD90AD0005AFBC /* ApiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC13441E25BD90AD0005AFBC /* ApiViewController.swift */; };
+		AC13442125BD971D0005AFBC /* UIView +.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC13442025BD971D0005AFBC /* UIView +.swift */; };
+		AC13442325BDAF8B0005AFBC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC13442225BDAF8B0005AFBC /* NetworkManager.swift */; };
+		AC13442525BDB1870005AFBC /* JokeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC13442425BDB1870005AFBC /* JokeModel.swift */; };
+		AC13442725BDB3930005AFBC /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC13442625BDB3930005AFBC /* SearchModel.swift */; };
+		AC13443225BDB6FD0005AFBC /* UITextField +.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC13443125BDB6FD0005AFBC /* UITextField +.swift */; };
+		AC13443425BDB8450005AFBC /* UIButton +.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC13443325BDB8450005AFBC /* UIButton +.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AC13440525BD8D1D0005AFBC /* JokesList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JokesList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC13440825BD8D1D0005AFBC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AC13440A25BD8D1D0005AFBC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AC13440C25BD8D1D0005AFBC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AC13440C25BD8D1D0005AFBC /* JokesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesViewController.swift; sourceTree = "<group>"; };
 		AC13440F25BD8D1D0005AFBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AC13441125BD8D280005AFBC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC13441425BD8D280005AFBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AC13441625BD8D280005AFBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC13441C25BD8ECF0005AFBC /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		AC13441E25BD90AD0005AFBC /* ApiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiViewController.swift; sourceTree = "<group>"; };
+		AC13442025BD971D0005AFBC /* UIView +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView +.swift"; sourceTree = "<group>"; };
+		AC13442225BDAF8B0005AFBC /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		AC13442425BDB1870005AFBC /* JokeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeModel.swift; sourceTree = "<group>"; };
+		AC13442625BDB3930005AFBC /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
+		AC13443125BDB6FD0005AFBC /* UITextField +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField +.swift"; sourceTree = "<group>"; };
+		AC13443325BDB8450005AFBC /* UIButton +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton +.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,14 +71,85 @@
 			isa = PBXGroup;
 			children = (
 				AC13440825BD8D1D0005AFBC /* AppDelegate.swift */,
-				AC13440A25BD8D1D0005AFBC /* SceneDelegate.swift */,
-				AC13440C25BD8D1D0005AFBC /* ViewController.swift */,
-				AC13440E25BD8D1D0005AFBC /* Main.storyboard */,
-				AC13441125BD8D280005AFBC /* Assets.xcassets */,
-				AC13441325BD8D280005AFBC /* LaunchScreen.storyboard */,
 				AC13441625BD8D280005AFBC /* Info.plist */,
+				AC13441125BD8D280005AFBC /* Assets.xcassets */,
+				AC13442E25BDB6770005AFBC /* Extensions */,
+				AC13442825BDB5AF0005AFBC /* Service */,
+				AC13442B25BDB5FC0005AFBC /* TabBar */,
+				AC13440E25BD8D1D0005AFBC /* Main.storyboard */,
+				AC13441325BD8D280005AFBC /* LaunchScreen.storyboard */,
 			);
 			path = JokesList;
+			sourceTree = "<group>";
+		};
+		AC13442825BDB5AF0005AFBC /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				AC13442925BDB5B80005AFBC /* Network */,
+				AC13442225BDAF8B0005AFBC /* NetworkManager.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		AC13442925BDB5B80005AFBC /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				AC13442A25BDB5C50005AFBC /* Models */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		AC13442A25BDB5C50005AFBC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AC13442625BDB3930005AFBC /* SearchModel.swift */,
+				AC13442425BDB1870005AFBC /* JokeModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AC13442B25BDB5FC0005AFBC /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				AC13441C25BD8ECF0005AFBC /* TabBarController.swift */,
+				AC13442C25BDB63F0005AFBC /* Jokes screen */,
+				AC13442D25BDB6550005AFBC /* Api screen */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		AC13442C25BDB63F0005AFBC /* Jokes screen */ = {
+			isa = PBXGroup;
+			children = (
+				AC13440C25BD8D1D0005AFBC /* JokesViewController.swift */,
+			);
+			path = "Jokes screen";
+			sourceTree = "<group>";
+		};
+		AC13442D25BDB6550005AFBC /* Api screen */ = {
+			isa = PBXGroup;
+			children = (
+				AC13441E25BD90AD0005AFBC /* ApiViewController.swift */,
+			);
+			path = "Api screen";
+			sourceTree = "<group>";
+		};
+		AC13442E25BDB6770005AFBC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AC13442F25BDB6820005AFBC /* UIKit */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AC13442F25BDB6820005AFBC /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				AC13442025BD971D0005AFBC /* UIView +.swift */,
+				AC13443125BDB6FD0005AFBC /* UITextField +.swift */,
+				AC13443325BDB8450005AFBC /* UIButton +.swift */,
+			);
+			path = UIKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +223,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC13440D25BD8D1D0005AFBC /* ViewController.swift in Sources */,
+				AC13442325BDAF8B0005AFBC /* NetworkManager.swift in Sources */,
+				AC13441D25BD8ECF0005AFBC /* TabBarController.swift in Sources */,
+				AC13440D25BD8D1D0005AFBC /* JokesViewController.swift in Sources */,
+				AC13442725BDB3930005AFBC /* SearchModel.swift in Sources */,
 				AC13440925BD8D1D0005AFBC /* AppDelegate.swift in Sources */,
-				AC13440B25BD8D1D0005AFBC /* SceneDelegate.swift in Sources */,
+				AC13443225BDB6FD0005AFBC /* UITextField +.swift in Sources */,
+				AC13442525BDB1870005AFBC /* JokeModel.swift in Sources */,
+				AC13441F25BD90AD0005AFBC /* ApiViewController.swift in Sources */,
+				AC13443425BDB8450005AFBC /* UIButton +.swift in Sources */,
+				AC13442125BD971D0005AFBC /* UIView +.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +379,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7B5A43VP4C;
 				INFOPLIST_FILE = JokesList/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -294,7 +387,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ArtemUstinov.JokesList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -305,6 +398,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7B5A43VP4C;
 				INFOPLIST_FILE = JokesList/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -312,7 +406,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ArtemUstinov.JokesList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
