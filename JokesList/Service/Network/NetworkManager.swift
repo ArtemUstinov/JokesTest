@@ -8,28 +8,30 @@
 
 import Foundation
 
+enum ApiURL {
+    static let countData = "https://api.icndb.com/jokes/random/%@"
+    static let website = "http://www.icndb.com/api/"
+}
+
 class NetworkManager {
     
-    private enum ApiURL {
-        static let countData = "https://api.icndb.com/jokes/random/%@"
-    }
-    
-    func fetchData(countText: String, completion: @escaping([Joke]?) -> Void) {
+    func fetchData(countText: String,
+                   completion: @escaping(Result<[Joke]?, Error>) -> Void) {
         
         let urlString = String(format: ApiURL.countData, countText)
         guard let url = URL(string: urlString) else { return }
         
         URLSession.shared.dataTask(with: url) { (data, _, error) in
             if let error = error {
-                //! add .failure
+                completion(.failure(error))
                 print(error.localizedDescription)
                 return
             }
             guard let data = data else { return }
             do {
-                let data = try JSONDecoder().decode(SearchModel<Joke>.self, from: data)
-                //! .success
-                completion(data.value)
+                let data = try JSONDecoder().decode(SearchModel<Joke>.self,
+                                                    from: data)
+                completion(.success(data.value))
             } catch let error {
                 print(error.localizedDescription)
             }

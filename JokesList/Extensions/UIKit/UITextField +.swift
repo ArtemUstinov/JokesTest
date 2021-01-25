@@ -11,11 +11,18 @@ import UIKit
 extension UITextField {
     
     convenience init (
-        placeholder: String
+        placeholder: String? = nil,
+        cornerRadius: CGFloat
     ) {
         self.init()
-        backgroundColor = .secondarySystemBackground
+        if #available(iOS 13.0, *) {
+            backgroundColor = .secondarySystemBackground
+        } else {
+            backgroundColor = .lightText
+        }
         self.placeholder = placeholder
         textAlignment = .center
+        keyboardType = .numberPad
+        layer.cornerRadius = cornerRadius
     }
 }

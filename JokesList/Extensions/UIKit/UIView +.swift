@@ -10,6 +10,7 @@ import UIKit
 
 extension UIView {
     
+    //MARK: - Initializer:
     convenience init (
         color: UIColor
     ) {
@@ -17,6 +18,7 @@ extension UIView {
         backgroundColor = color
     }
     
+    //MARK: - Public methods:
     func addConstraintsWithFormat(format: String, views: [UIView]) {
         
         var viewDectionary = [String : UIView]()

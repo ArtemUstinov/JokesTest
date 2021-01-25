@@ -11,13 +11,12 @@ import UIKit
 class TabBarController: UITabBarController {
     
     //MARK: - Private properties:
-    private let jokesVC = JokesViewController()
-    private let apiVC = ApiViewController()
+    private let jokesController = JokesViewController()
+    private let apiController = ApiViewController()
     
     //MARK: - Override methods:
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupTabBar()
     }
     
@@ -25,21 +24,28 @@ class TabBarController: UITabBarController {
     private func setupTabBar() {
         tabBar.tintColor = .black
         
-        viewControllers = [
-            generateViewController(rootViewController: jokesVC,
-                                   image: UIImage(systemName: "1.circle"),
-                                   title: "Jokes"),
-            generateViewController(rootViewController: apiVC,
-                                   image: UIImage(systemName: "2.circle"),
-                                   title: "Api")
-        ]
-        
-        //! Разобраться с ИОС10 - систем нейма к примеру там нету! 
+        if #available(iOS 13.0, *) {
+            viewControllers = [
+                generateViewController(rootViewController: jokesController,
+                                       image: UIImage(systemName: "1.circle"),
+                                       title: "Jokes"),
+                generateViewController(rootViewController: apiController,
+                                       image: UIImage(systemName: "2.circle"),
+                                       title: "Api")
+            ]
+        } else {
+            viewControllers = [
+                generateViewController(rootViewController: jokesController,
+                                       title: "Jokes"),
+                generateViewController(rootViewController: apiController,
+                                       title: "Api")
+            ]
+        }
     }
     
     private func generateViewController(
         rootViewController: UIViewController,
-        image: UIImage?,
+        image: UIImage? = nil,
         title: String
     ) -> UIViewController {
         
@@ -48,6 +54,7 @@ class TabBarController: UITabBarController {
         navigationVC.tabBarItem.image = image
         navigationVC.tabBarItem.title = title
         rootViewController.navigationItem.title = title
+        navigationVC.navigationBar.tintColor = .black
         return navigationVC
     }
 }
