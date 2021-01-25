@@ -80,8 +80,6 @@ class JokesViewController: UIViewController, KeyboardProtocol {
         )
     }
     @objc private func handleTapGesture() {
-        tableView.isHidden = false
-        bottomLineView.isHidden = false
         view.endEditing(true)
     }
     
