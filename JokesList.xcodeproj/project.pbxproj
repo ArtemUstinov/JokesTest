@@ -119,7 +119,6 @@
 		AC13442B25BDB5FC0005AFBC /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
-				AC13444325BF44F10005AFBC /* KeyboardProtocol.swift */,
 				AC13441C25BD8ECF0005AFBC /* TabBarController.swift */,
 				AC13442C25BDB63F0005AFBC /* Jokes screen */,
 				AC13442D25BDB6550005AFBC /* Api screen */,
@@ -131,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				AC13443925BDC9EC0005AFBC /* Cell */,
+				AC13444325BF44F10005AFBC /* KeyboardProtocol.swift */,
 				AC13440C25BD8D1D0005AFBC /* JokesViewController.swift */,
 			);
 			path = "Jokes screen";
