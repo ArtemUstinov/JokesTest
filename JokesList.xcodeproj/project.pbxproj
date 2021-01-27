@@ -24,6 +24,7 @@
 		AC13443B25BDCA170005AFBC /* JokeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC13443A25BDCA170005AFBC /* JokeCell.swift */; };
 		AC13444225BF3D9B0005AFBC /* ErrorAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC13444125BF3D9B0005AFBC /* ErrorAlertController.swift */; };
 		AC13444425BF44F10005AFBC /* KeyboardProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC13444325BF44F10005AFBC /* KeyboardProtocol.swift */; };
+		AC79E2D825C158C10025ADCD /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AC79E2D725C158C10025ADCD /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		AC13443A25BDCA170005AFBC /* JokeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeCell.swift; sourceTree = "<group>"; };
 		AC13444125BF3D9B0005AFBC /* ErrorAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorAlertController.swift; sourceTree = "<group>"; };
 		AC13444325BF44F10005AFBC /* KeyboardProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardProtocol.swift; sourceTree = "<group>"; };
+		AC79E2D725C158C10025ADCD /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 		AC13442B25BDB5FC0005AFBC /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
+				AC79E2D725C158C10025ADCD /* README.md */,
 				AC13441C25BD8ECF0005AFBC /* TabBarController.swift */,
 				AC13442C25BDB63F0005AFBC /* Jokes screen */,
 				AC13442D25BDB6550005AFBC /* Api screen */,
@@ -246,6 +249,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC79E2D825C158C10025ADCD /* README.md in Resources */,
 				AC13441525BD8D280005AFBC /* LaunchScreen.storyboard in Resources */,
 				AC13441225BD8D280005AFBC /* Assets.xcassets in Resources */,
 			);
