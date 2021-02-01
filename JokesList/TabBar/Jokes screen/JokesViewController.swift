@@ -13,13 +13,16 @@ class JokesViewController: UIViewController, KeyboardProtocol {
     //MARK: - Properties:
     private let networkManager = NetworkManager()
     lazy private var errorAlertController = ErrorAlertController()
-    private var jokesData: [Joke]?
+    
+    private var jokesData: [Joke]? {
+        didSet { parseData(count: jokesData?.count) }
+    }
     
     //MARK: - UI elements:
     private let scrollView = UIScrollView()
     private let mainView = UIView()
     private let tableView = UITableView()
-    private var textField = UITextField(placeholder: "Unput..",
+    private var textField = UITextField(placeholder: "Input..",
                                         cornerRadius: 12)
     private let loadButton = UIButton(text: "Reset",
                                       cornerRadius: 12)
@@ -38,22 +41,35 @@ class JokesViewController: UIViewController, KeyboardProtocol {
         setupToolBar()
     }
     
-    //MARK: - GetData
+    //MARK: - GetData and ParseData:
     private func getJokesData() {
         networkManager.fetchData(countText: textField.text ?? "") {
             [weak self] result in
             switch result {
             case .success(let data):
                 self?.jokesData = data
-                DispatchQueue.main.async {
-                    self?.tableView.reloadData()
-                }
             case .failure(let error):
                 self?.errorAlertController.show(with: error) {
                     [weak self] alert in
                     self?.present(alert, animated: true)
                 }
             }
+        }
+    }
+    
+    private func parseData(count: Int?) {
+        if count ?? 0 > 0 {
+            tableView.isHidden = false
+            tableView.reloadData()
+            
+            if tableView.contentSize.height > tableView.frame.height {
+                bottomLineView.isHidden = false
+            } else {
+                bottomLineView.isHidden = true
+            }
+        } else {
+            tableView.isHidden = true
+            bottomLineView.isHidden = true
         }
     }
     
@@ -85,7 +101,15 @@ class JokesViewController: UIViewController, KeyboardProtocol {
     
     //MARK: - Setup ToolBar:
     private func setupToolBar() {
-        let toolbar = UIToolbar()
+        
+        let toolbar = UIToolbar(
+            frame: CGRect.init(x: 0,
+                               y: 0,
+                               width: UIScreen.main.bounds.width,
+                               height: 50)
+        )
+        toolbar.barStyle = .default
+        
         let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace,
                                         target: nil,
                                         action: nil)
@@ -103,9 +127,7 @@ class JokesViewController: UIViewController, KeyboardProtocol {
     
     @objc private func doneButtonTapped() {
         getJokesData()
-        tableView.isHidden = false
-        bottomLineView.isHidden = false
-        view.endEditing(true)
+        textField.resignFirstResponder()
     }
     
     //MARK: - Setup TableView:
@@ -127,11 +149,27 @@ class JokesViewController: UIViewController, KeyboardProtocol {
         mainView.addSubview(loadButton)
         mainView.addSubview(bottomLineView)
         
-        // H and V: scrollView line
-        view.addConstraintsWithFormat(format: "H:|[v0]|",
-                                      views: [scrollView])
-        view.addConstraintsWithFormat(format: "V:|[v0]|",
-                                      views: [scrollView])
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            scrollView.leadingAnchor.constraint(
+                equalTo: view.safeAreaLayoutGuide.leadingAnchor
+            ),
+            scrollView.trailingAnchor.constraint(
+                equalTo: view.safeAreaLayoutGuide.trailingAnchor
+            ),
+            scrollView.topAnchor.constraint(
+                equalTo: view.safeAreaLayoutGuide.topAnchor
+            ),
+            scrollView.bottomAnchor.constraint(
+                equalTo: view.safeAreaLayoutGuide.bottomAnchor
+            ),
+        ])
+        
+        //        // H and V: scrollView line
+        //        view.addConstraintsWithFormat(format: "H:|[v0]|",
+        //                                      views: [scrollView])
+        //        view.addConstraintsWithFormat(format: "V:|[v0]|",
+        //                                      views: [scrollView])
         
         // H and V: mainView line
         scrollView.addConstraintsWithFormat(format: "H:|[v0]|",

@@ -23,7 +23,9 @@ class NetworkManager {
         
         URLSession.shared.dataTask(with: url) { (data, _, error) in
             if let error = error {
-                completion(.failure(error))
+                DispatchQueue.main.async {
+                    completion(.failure(error))
+                }
                 print(error.localizedDescription)
                 return
             }
@@ -31,8 +33,13 @@ class NetworkManager {
             do {
                 let data = try JSONDecoder().decode(SearchModel<Joke>.self,
                                                     from: data)
-                completion(.success(data.value))
+                DispatchQueue.main.async {
+                    completion(.success(data.value))
+                }
             } catch let error {
+                DispatchQueue.main.async {
+                    completion(.failure(error))
+                }
                 print(error.localizedDescription)
             }
         }.resume()

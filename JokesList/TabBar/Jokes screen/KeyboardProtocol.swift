@@ -15,19 +15,25 @@ protocol KeyboardProtocol: AnyObject {
 
 extension KeyboardProtocol {
     public func setupKeyboardHandler() {
-        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillChangeFrameNotification, object: nil, queue: nil) { notification in
+        NotificationCenter.default.addObserver(
+            forName: UIResponder.keyboardWillChangeFrameNotification,
+            object: nil,
+            queue: nil) { notification in
             self.keyboardDidShow(notification)
         }
-        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: nil) { notification in
+        NotificationCenter.default.addObserver(
+            forName: UIResponder.keyboardWillHideNotification,
+            object: nil,
+            queue: nil) { notification in
             self.keyboardWillHide(notification)
         }
     }
     
     private func keyboardDidShow(_ notification: Notification) {
         guard let keyboardSize =
-            notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey]
+                notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey]
                 as? NSValue else {
-                    return
+            return
         }
         self.view.frame.origin.y = 0 - keyboardSize.cgRectValue.height
     }
